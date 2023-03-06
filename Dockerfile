@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y systemd sudo iputils-ping openssh-clien
 RUN systemctl mask dev-root.device
 RUN mkdir /root/.ssh
 
+# Install Falco tool
 RUN curl -s https://falco.org/repo/falcosecurity-packages.asc | apt-key add -
 RUN echo "deb https://download.falco.org/packages/deb stable main" | tee -a /etc/apt/sources.list.d/falcosecurity.list
 RUN apt-get update -y
