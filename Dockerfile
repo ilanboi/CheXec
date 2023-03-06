@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 ENV container docker
 
-# Install systemd, sudo, ping
+# Install packages
 RUN apt-get update && apt-get install -y systemd sudo iputils-ping openssh-client curl gnupg
 RUN systemctl mask dev-root.device
 RUN mkdir /root/.ssh
